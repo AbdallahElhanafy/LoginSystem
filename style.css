@@ -1,0 +1,23 @@
+.container{
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#signInRedirect{
+    text-decoration: underline;
+    background: none;
+    border: none;
+}
+
+#signUpRedirect{
+    text-decoration: underline;
+    background: none;
+    border: none;
+}
