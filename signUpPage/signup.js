@@ -1,8 +1,10 @@
 let loginRedirect = document.getElementById('signInRedirect')
 let emailRegexCheck = document.getElementById('emailRegexCheck');
 let passwordRegexCheck = document.getElementById('passwordRegexCheck');
+
 let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/;
+let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*?_-])[a-zA-Z\d!@#$%^&*?_-]{8,}$/;
+
 let signUpBtn = document.getElementById('signUp');
 
 let name = document.getElementById('name')
