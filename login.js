@@ -3,11 +3,12 @@ let loginBtn =document.getElementById('loginBtn');
 let email = document.getElementById('email')
 let password = document.getElementById('password')
 
-let accounts = JSON.parse(localStorage.getItem('accounts'))
+let accounts = JSON.parse(localStorage.getItem('accounts')) || []
 console.log(accounts)
 
 
 loginBtn.addEventListener('click', function (){
+
     let wrongEmail = true;
     let wrongPassword = false;
     for (let i =0; i<accounts.length; i++){
