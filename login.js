@@ -13,7 +13,7 @@ loginBtn.addEventListener('click', function (){
             && password.value === accounts[i].password){
             localStorage.setItem('isLoggedIn', 'true')
             localStorage.setItem('name', accounts[i].name)
-            window.location.href = 'home.html'
+            window.location.href = 'homePage/home.html'
             email.value = ''
             password.value = ''
         }
@@ -31,5 +31,5 @@ loginBtn.addEventListener('click', function (){
 
 
 signUpRedirect.addEventListener("click", function (){
-    window.location.href = 'signup.html'
+    window.location.href = 'signUpPage/signup.html'
 })

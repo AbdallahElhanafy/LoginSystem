@@ -11,5 +11,5 @@ name.innerHTML = userName;
 logoutBtn.addEventListener('click', function (){
     localStorage.setItem('isLoggedIn' ,'false')
     localStorage.setItem('name', '')
-    window.location.href = 'index.html'
+    window.location.href = '../index.html'
 })

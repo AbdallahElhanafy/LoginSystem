@@ -19,7 +19,7 @@ let account = {
 
 
 loginRedirect.addEventListener('click',function (){
-    window.location.href = 'index.html'
+    window.location.href = '../index.html'
 })
 
 email.addEventListener('keyup',validateEmail)
@@ -37,7 +37,7 @@ signUpBtn.addEventListener('click', function () {
            localStorage.setItem('accounts' ,JSON.stringify(registeredAccounts) )
            email.value =''
            password.value = ''
-           window.location.href = 'index.html'
+           window.location.href = '../index.html'
 
        } else
            window.alert('Email already exists!')
