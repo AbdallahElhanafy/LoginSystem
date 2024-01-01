@@ -9,7 +9,7 @@ let name = document.getElementById('name')
 let email = document.getElementById('email')
 let password = document.getElementById('password')
 
-let registeredAccounts = []
+let registeredAccounts = JSON.parse(localStorage.getItem('accounts')) || []
 let account = {
     name: String,
     email: String,
