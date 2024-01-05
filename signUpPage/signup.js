@@ -1,7 +1,9 @@
 let loginRedirect = document.getElementById('signInRedirect')
 let emailRegexCheck = document.getElementById('emailRegexCheck');
 let passwordRegexCheck = document.getElementById('passwordRegexCheck');
+let nameRegexCheck = document.getElementById('nameRegexCheck');
 
+let nameRegex = /^[a-zA-Z\s]{3,}$/;
 let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*?_-])[a-zA-Z\d!@#$%^&*?_-]{8,}$/;
 
@@ -24,11 +26,12 @@ loginRedirect.addEventListener('click',function (){
     window.location.href = '../index.html'
 })
 
+name.addEventListener('keyup',validateName)
 email.addEventListener('keyup',validateEmail)
 password.addEventListener('keyup',validatePassword)
 
 signUpBtn.addEventListener('click', function () {
-    if (validateEmail()=== true && validatePassword()=== true ) {
+    if (validateEmail()=== true && validatePassword()=== true && validateName() === true ) {
        if (!isEmailInUse(email.value)){
            account = {
                name: name.value,
@@ -46,13 +49,21 @@ signUpBtn.addEventListener('click', function () {
     }
 })
 
+function validateName() {
+    if (!nameRegex.test(name.value)) {
 
+        nameRegexCheck.innerHTML = 'Name should have at least 3 letters and should only contain alphabets and spaces.'
+        return false
+    } else {
+        nameRegexCheck.innerHTML = ``
+        return true
+    }
+}
 
 
 function validateEmail () {
     if(!emailRegex.test(email.value)){
         emailRegexCheck.innerHTML = `Enter valid email`
-        emailRegexCheck.style.color = 'red'
         return false
     }
     else
@@ -63,7 +74,6 @@ function validateEmail () {
 
 function validatePassword () {
     if (!passwordRegex.test(password.value)){
-        passwordRegexCheck.style.color ='red'
         passwordRegexCheck.innerHTML = 'Password should have at least one lowercase letter, one uppercase letter,' +
             ' one digit, one symbol, and a minimum length of 8 characters. '
         return false

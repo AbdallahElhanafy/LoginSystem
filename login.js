@@ -36,3 +36,6 @@ loginBtn.addEventListener('click', function (){
 signUpRedirect.addEventListener("click", function (){
     window.location.href = 'signUpPage/signup.html'
 })
+
+
+
